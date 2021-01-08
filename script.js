@@ -25,7 +25,7 @@ function drawBoard(){
         for(let j=0;j<boardArray[i].length;j++){
             let btn=document.createElement('button');
             btn.className='element';
-            btn.style.width=(80/(elements-boardArray[i][j]))+"%";
+            btn.style.width=(10+((90-10)/elements)*boardArray[i][j])+"%";
             console.log('value'+btn.style.width)
             document.querySelector('#ctn'+i).appendChild(btn);
         }
