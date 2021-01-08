@@ -11,3 +11,6 @@ Project One: Tower of Hanoi
     * The element can only be moved to a container where the smallest element is larger than the one you are moving
 * Game continious until all the elements are inside the rigth container
 * GAME ENDS
+
+* key variable to keep game tracking
+* An array which contains 3 sub-array. En each sub-array is going to be stored the current tower.
