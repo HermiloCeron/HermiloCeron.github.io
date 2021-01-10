@@ -6,6 +6,11 @@ let elements=7;
 // Main array storing the game board
 const boardArray=[[],[],[]];
 
+// Constants to control the game
+let topValueToMove=-1;
+let moveTo=-1;
+
+
 // Initial array previous to the game in normal mode
 iniArray();
 
@@ -49,14 +54,16 @@ function playHanoi(){
     }
 }
 
-function topFunction(){
+function topFunction(e){
     //console.log(e.target);
+    // Store the value which is going to be moved
+    topValueToMove=parseInt(e.target.id.charAt(e.target.id.length-1));
     //Remove event listener of the tops
     for(let j=0;j<3;j++){
         // Check if there is an element inside the container
         if(boardArray[j].length>0){
             let top2=document.querySelector('#element'+boardArray[j][0]);
-            console.log(top2);
+            //console.log(top2);
             top2.removeEventListener('click',topFunction,false);
         }
 
@@ -71,5 +78,10 @@ function topFunction(){
 }
 
 function selectContainer(evt){
-    console.log('hola');
+    for(let j=0;j<3;j++){
+        // Select a container
+        let container=document.querySelector('#ctn'+j);
+        // Add an event listeenr to teh container
+        container.removeEventListener('click',selectContainer,false);
+    }
 }
