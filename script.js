@@ -13,6 +13,9 @@ let moveValueTo;
 // Variable to count the movements
 let movements=0;
 
+// Variable to track the number of points
+let points=0;
+
 // Initial array previous to the game in normal mode
 iniArray();
 
@@ -113,5 +116,7 @@ function selectContainer(evt){
         if(boardArray[2].length<elements){
             playHanoi();
         }
+        points=(2**elements-1)+(2**elements-1-movements);
+        console.log(points);
     }
 }
