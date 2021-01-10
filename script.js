@@ -30,13 +30,18 @@ function iniArray(){
 // Draw the elements into the board
 function drawBoard(){
     for(let i=0;i<3;i++){
+        let container=document.querySelector('#ctn'+i);
+        //Remove all the children  https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+        while(container.lastChild){
+            container.removeChild(container.lastChild);
+        }
         for(let j=0;j<boardArray[i].length;j++){
             let btn=document.createElement('button');
             btn.className='element';
             btn.id='element'+boardArray[i][j]+'ctn'+i;
             btn.style.width=(10+((90-10)/(elements-1))*boardArray[i][j])+"%";
             console.log('value'+btn.style.width)
-            document.querySelector('#ctn'+i).appendChild(btn);
+            container.appendChild(btn);
         }
     }
 }
@@ -93,6 +98,9 @@ function selectContainer(evt){
     }
     //Check if is a valid movement
     if(moveValueTo!==moveValueFrom){
-        console.log('ok');
+        //  Remove the first value with Shift  https://www.w3schools.com/jsref/jsref_shift.asp
+        //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
+        boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
+        drawBoard();
     }
 }
