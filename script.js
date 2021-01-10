@@ -98,10 +98,14 @@ function selectContainer(evt){
     }
     //Check if is a valid movement
     if(moveValueTo!==moveValueFrom){
-        //  Remove the first value with Shift  https://www.w3schools.com/jsref/jsref_shift.asp
-        //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
-        boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
-        drawBoard();
+        console.log(moveValueFrom)
+        console.log(moveValueTo)
+        if(boardArray[moveValueTo].length == 0 || boardArray[moveValueTo][0]>boardArray[moveValueFrom][0]){
+            //  Remove the first value with Shift  https://www.w3schools.com/jsref/jsref_shift.asp
+            //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
+            boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
+            drawBoard();
+        }
         if(boardArray[2].length<elements){
             playHanoi();
         }
