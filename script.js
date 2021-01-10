@@ -48,8 +48,8 @@ function drawBoard(){
 
 //Main function to play
 function playHanoi(){
-    moveValueFrom=-1;
-    moveValueTo=-1;
+    // moveValueFrom=-1;
+    // moveValueTo=-1;
     for(let i=0;i<3;i++){
         // Check if there is an element inside the container
         if(boardArray[i].length>0){
@@ -102,5 +102,8 @@ function selectContainer(evt){
         //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
         boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
         drawBoard();
+        if(boardArray[2].length<elements){
+            playHanoi();
+        }
     }
 }
