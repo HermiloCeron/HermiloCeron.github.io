@@ -1,15 +1,17 @@
-console.log('Script file linked!');
+//console.log('Script file linked!');
 
 // Number of elements in the tower of Hanoi
-let elements=7;
+let elements=3;
 
 // Main array storing the game board
 const boardArray=[[],[],[]];
 
-// Constants to control the game
-let moveValueFrom=-1;
-let moveValueTo=-1;
+// Variables to control the game
+let moveValueFrom;
+let moveValueTo;
 
+// Variable to count the movements
+let movements=0;
 
 // Initial array previous to the game in normal mode
 iniArray();
@@ -40,7 +42,7 @@ function drawBoard(){
             btn.className='element';
             btn.id='element'+boardArray[i][j]+'ctn'+i;
             btn.style.width=(10+((90-10)/(elements-1))*boardArray[i][j])+"%";
-            console.log('value'+btn.style.width)
+            //console.log('value'+btn.style.width)
             container.appendChild(btn);
         }
     }
@@ -98,12 +100,14 @@ function selectContainer(evt){
     }
     //Check if is a valid movement
     if(moveValueTo!==moveValueFrom){
-        console.log(moveValueFrom)
-        console.log(moveValueTo)
+        //console.log(moveValueFrom)
+        //console.log(moveValueTo)
         if(boardArray[moveValueTo].length == 0 || boardArray[moveValueTo][0]>boardArray[moveValueFrom][0]){
             //  Remove the first value with Shift  https://www.w3schools.com/jsref/jsref_shift.asp
             //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
             boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
+            movements++;
+            console.log(movements);
             drawBoard();
         }
         if(boardArray[2].length<elements){
