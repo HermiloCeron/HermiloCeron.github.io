@@ -50,8 +50,14 @@ loginForm.addEventListener('submit',(e)=>{
     document.getElementById("login-page").style.display="none";
     document.getElementById("game-page").style.display="initial";
     document.getElementById('player').innerText='Player: '+player;
+    setMusic();
 })
 
+// Funstion to set the music
+function setMusic(){
+        // Play audio elements https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
+        currSong.play();
+}
 // Set Reset game button
 
 const rstBtn=document.getElementById('rstGame');
@@ -305,3 +311,5 @@ function checkMode(e){
     }
     resetGame=true;
 }
+
+let currSong=document.getElementById('song1');
