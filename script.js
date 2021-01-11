@@ -76,8 +76,29 @@ song1.addEventListener('ended',()=>{
 
 song2.addEventListener('ended',()=>{
     song2.currentTime=0;
+    song3.play();
+})
+
+song3.addEventListener('ended',()=>{
+    song3.currentTime=0;
+    song4.play();
+})
+
+song4.addEventListener('ended',()=>{
+    song4.currentTime=0;
+    song5.play();
+})
+
+song5.addEventListener('ended',()=>{
+    song5.currentTime=0;
+    song6.play();
+})
+
+song6.addEventListener('ended',()=>{
+    song6.currentTime=0;
     song1.play();
 })
+
 // Set Reset game button
 
 const rstBtn=document.getElementById('rstGame');
