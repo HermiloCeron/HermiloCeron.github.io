@@ -137,7 +137,7 @@ function iniArray(){
         for(let i=0;i<elements;i++){
             boardArray[0].push(i);
             boardArray[1].push(i);
-            if(i%2==0){
+            if(i%2>0.5){
                 colorArray[0].push('red');
                 colorArray[1].push('blue');
             }else{
@@ -255,25 +255,55 @@ function selectContainer(evt){
             //  Remove the first value with Shift  https://www.w3schools.com/jsref/jsref_shift.asp
             //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
             boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
+            if(gameModeNumber==4){
+                colorArray[moveValueTo].unshift(colorArray[moveValueFrom].shift());
+            }
             movements++;
             //console.log(movements);
             drawBoard();
         }
         points=(2**elements-1)+(2**elements-1-movements);
         //console.log(points);
-        if(boardArray[2].length<elements && gameModeNumber!= 4){
-            playHanoi();
-        }else if(gameModeNumber==4){
-            playHanoi();
-        }else{
-            if(points>score){
-                score=points;
-                document.getElementById('score').innerText='Best score: '+score;
+        if(gameModeNumber!=4){
+            if(boardArray[2].length<elements){
+                playHanoi();
+            }else{
+                if(points>score){
+                    score=points;
+                    document.getElementById('score').innerText='Best score: '+score;
+                }
             }
+        }else{
+            playHanoi();
+            console.log('temp');
         }
     }else{
-        playHanoi();
+        if(checkBicolor()){
+            playHanoi();
+        }else{
+            console.log('You win bicolor');
+        }
     }
+}
+
+// Function to check if bicolor has been solved
+function checkBicolor(){
+    let reds=0;
+    for(let i=0;j<colorArray[0].length;i++){
+        if(colorArray[0][i]=='red'){
+            reds++;
+        }
+    }
+    let blues=0;
+    for(let i=0;j<colorArray[1].length;i++){
+        if(colorArray[1][i]=='blue'){
+            blues++;
+        }
+    }
+    if(blues==elements && reds==elements){
+        return false;
+    }
+    return true;
 }
 
 // Set the level buttons
