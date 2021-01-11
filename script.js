@@ -66,6 +66,18 @@ function setMusic(){
         // Play audio elements https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
         song1.play();
 }
+
+//Looping through the songs using an event listener https://stackoverflow.com/questions/11103582/how-do-you-detect-when-html5-audio-has-finished-playing-more-than-once
+
+song1.addEventListener('ended',()=>{
+    song1.currentTime=0;
+    song2.play();
+})
+
+song2.addEventListener('ended',()=>{
+    song2.currentTime=0;
+    song1.play();
+})
 // Set Reset game button
 
 const rstBtn=document.getElementById('rstGame');
