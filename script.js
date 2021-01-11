@@ -22,6 +22,9 @@ let score=0;
 // player ID
 let player="";
 
+//  Reset game variable
+let resetGame=false;
+
 // Initial array previous to the game in normal mode
 iniArray();
 
@@ -43,9 +46,21 @@ loginForm.addEventListener('submit',(e)=>{
     document.getElementById('player').innerText='Player: '+player;
 })
 
+// Set Reset game button
+
+const rstBtn=document.getElementById('rstGame');
+
+rstBtn.addEventListener('click',() => {
+    resetGame=true;   
+});
+
+
 // Initializate the array in the traditional way
 function iniArray(){
-    for(let i=0;i<elements;i++){
+    for(let i=0;i<3;i++){
+        boardArray[i].length=0;
+    }
+        for(let i=0;i<elements;i++){
         boardArray[0].push(i);
     }
 }
@@ -69,6 +84,22 @@ function drawBoard(){
     }
 }
 
+// Check reset
+
+function checkReset(){
+    if(resetGame){
+        resetGame=false;
+        gameMode();
+    }
+}
+
+// Main funtion to control the game mode
+function gameMode(){
+    iniArray();
+    drawBoard();
+    playHanoi();
+}
+
 //Main function to play
 function playHanoi(){
     // moveValueFrom=-1;
@@ -82,6 +113,7 @@ function playHanoi(){
             top.addEventListener('click',topFunction,false)
         }
     }
+    setInterval(checkReset,10);
 }
 
 function topFunction(e){
