@@ -12,6 +12,9 @@ let elements=3;
 // Main array storing the game board
 const boardArray=[[],[],[]];
 
+// Auxiliary array for the colors
+const colorArray=[[],[],[]];
+
 // Variables to control the game
 let moveValueFrom;
 let moveValueTo;
@@ -134,6 +137,13 @@ function iniArray(){
         for(let i=0;i<elements;i++){
             boardArray[0].push(i);
             boardArray[1].push(i);
+            if(i%2==0){
+                colorArray[0].push('red');
+                colorArray[1].push('blue');
+            }else{
+                colorArray[0].push('blue');
+                colorArray[1].push('red');
+            }
         }
     }
 }
@@ -217,7 +227,6 @@ function topFunction(e){
         }
 
     }
-    
     for(let j=0;j<3;j++){
         // Select a container
         let container=document.querySelector('#ctn'+j);
@@ -249,7 +258,9 @@ function selectContainer(evt){
         }
         points=(2**elements-1)+(2**elements-1-movements);
         //console.log(points);
-        if(boardArray[2].length<elements){
+        if(boardArray[2].length<elements && gameModeNumber!= 4){
+            playHanoi();
+        }else if(gameModeNumber==4){
             playHanoi();
         }else{
             if(points>score){
