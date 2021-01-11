@@ -1,5 +1,9 @@
 //console.log('Script file linked!');
 
+
+// Default level
+let gameLevel=1;
+
 // Number of elements in the tower of Hanoi
 let elements=3;
 
@@ -160,15 +164,45 @@ function selectContainer(evt){
             //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
             boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
             movements++;
-            console.log(movements);
+            //console.log(movements);
             drawBoard();
-        }
-        if(boardArray[2].length<elements){
-            playHanoi();
         }
         points=(2**elements-1)+(2**elements-1-movements);
         console.log(points);
+        if(boardArray[2].length<elements){
+            playHanoi();
+        }else{
+            if(points>score){
+                score=points;
+                document.getElementById('score').innerText='Best score: '+score;
+            }
+        }
     }else{
         playHanoi();
     }
+}
+
+// Set the level buttons
+
+document.getElementById('level1').addEventListener('click',checkLevel);
+document.getElementById('level2').addEventListener('click',checkLevel);
+document.getElementById('level3').addEventListener('click',checkLevel);
+document.getElementById('level4').addEventListener('click',checkLevel);
+
+function checkLevel(e){
+    gameLevel=parseInt(e.target.id.charAt(e.target.id.length-1));
+    switch(gameLevel){
+        case 2:
+            elements=5;
+            break;
+        case 3:
+            elements=7;
+            break;
+        case 4:
+            elements=9;
+            break;
+        default:
+            elements=3;
+    }
+    resetGame=true;
 }
