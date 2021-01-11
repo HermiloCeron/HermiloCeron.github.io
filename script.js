@@ -103,6 +103,17 @@ function drawBoard(){
             container.appendChild(btn);
         }
     }
+    if(gameModeNumber==2){
+        let mainContainers=document.querySelectorAll('.container');
+        for(let j=0;j<mainContainers.length;j++){
+            mainContainers[j].style.flexDirection='column-reverse';
+        }
+    }else{
+        let mainContainers=document.querySelectorAll('.container');
+        for(let j=0;j<mainContainers.length;j++){
+            mainContainers[j].style.flexDirection='column';
+        }
+    }
 }
 
 // Check reset
@@ -185,7 +196,7 @@ function selectContainer(evt){
             drawBoard();
         }
         points=(2**elements-1)+(2**elements-1-movements);
-        console.log(points);
+        //console.log(points);
         if(boardArray[2].length<elements){
             playHanoi();
         }else{
