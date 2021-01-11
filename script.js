@@ -130,6 +130,11 @@ function iniArray(){
                 boardArray[1].push(i);
             }
         }
+    }else{
+        for(let i=0;i<elements;i++){
+            boardArray[0].push(i);
+            boardArray[1].push(i);
+        }
     }
 }
 
@@ -234,7 +239,7 @@ function selectContainer(evt){
     if(moveValueTo!==moveValueFrom){
         //console.log(moveValueFrom)
         //console.log(moveValueTo)
-        if(boardArray[moveValueTo].length == 0 || boardArray[moveValueTo][0]>boardArray[moveValueFrom][0]){
+        if(boardArray[moveValueTo].length == 0 || boardArray[moveValueTo][0]>=boardArray[moveValueFrom][0]){
             //  Remove the first value with Shift  https://www.w3schools.com/jsref/jsref_shift.asp
             //  Add this value at the top with unshift https://www.w3schools.com/jsref/jsref_unshift.asp
             boardArray[moveValueTo].unshift(boardArray[moveValueFrom].shift());
