@@ -1,5 +1,7 @@
 //console.log('Script file linked!');
 
+// Default game mode
+let gameModeNumber=1;
 
 // Default level
 let gameLevel=1;
@@ -64,8 +66,23 @@ function iniArray(){
     for(let i=0;i<3;i++){
         boardArray[i].length=0;
     }
+    if(gameModeNumber==1 || gameModeNumber==2){
         for(let i=0;i<elements;i++){
-        boardArray[0].push(i);
+            boardArray[0].push(i);
+        }
+    }
+    else if(gameModeNumber==3){
+        for(let i=0;i<elements;i++){
+            let randSelector=Math.random();
+            if(randSelector<1/3){
+                boardArray[0].push(i);
+            }else if(randSelector>2/3){
+                boardArray[2].push(i);
+            }
+            else{
+                boardArray[1].push(i);
+            }
+        }
     }
 }
 
