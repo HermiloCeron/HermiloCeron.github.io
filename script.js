@@ -233,3 +233,47 @@ function checkLevel(e){
 // Make the reset user botton to reload teh page https://www.w3schools.com/jsref/met_loc_reload.asp
 
 document.getElementById('rstUser').addEventListener('click',() => {location.reload();})
+
+// Set the game mode buttons
+
+const modeBtn1=document.getElementById('gameMode1');
+const modeBtn2=document.getElementById('gameMode2');
+const modeBtn3=document.getElementById('gameMode3');
+const modeBtn4=document.getElementById('gameMode4');
+
+modeBtn1.addEventListener('click',checkMode);
+modeBtn2.addEventListener('click',checkMode);
+modeBtn3.addEventListener('click',checkMode);
+modeBtn4.addEventListener('click',checkMode);
+
+modeBtn1.style.backgroundColor="#CE1836";
+
+function checkMode(e){
+    gameModeNumber=parseInt(e.target.id.charAt(e.target.id.length-1));
+    switch(gameModeNumber){
+        case 2:
+            modeBtn1.style.backgroundColor="#009989";
+            modeBtn2.style.backgroundColor="#CE1836";
+            modeBtn3.style.backgroundColor="#009989";
+            modeBtn4.style.backgroundColor="#009989";
+            break;
+        case 3:
+            modeBtn1.style.backgroundColor="#009989";
+            modeBtn2.style.backgroundColor="#009989";
+            modeBtn3.style.backgroundColor="#CE1836";
+            modeBtn4.style.backgroundColor="#009989";
+            break;
+        case 4:
+            modeBtn1.style.backgroundColor="#009989";
+            modeBtn2.style.backgroundColor="#009989";
+            modeBtn3.style.backgroundColor="#009989";
+            modeBtn4.style.backgroundColor="#CE1836";
+            break;
+        default:
+            modeBtn1.style.backgroundColor="#CE1836";
+            modeBtn2.style.backgroundColor="#009989";
+            modeBtn3.style.backgroundColor="#009989";
+            modeBtn4.style.backgroundColor="#009989";
+    }
+    resetGame=true;
+}
