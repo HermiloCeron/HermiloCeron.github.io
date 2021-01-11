@@ -184,10 +184,15 @@ function selectContainer(evt){
 
 // Set the level buttons
 
-document.getElementById('level1').addEventListener('click',checkLevel);
-document.getElementById('level2').addEventListener('click',checkLevel);
-document.getElementById('level3').addEventListener('click',checkLevel);
-document.getElementById('level4').addEventListener('click',checkLevel);
+const levelBtn1=document.getElementById('level1');
+const levelBtn2=document.getElementById('level2');
+const levelBtn3=document.getElementById('level3');
+const levelBtn4=document.getElementById('level4');
+
+levelBtn1.addEventListener('click',checkLevel);
+levelBtn2.addEventListener('click',checkLevel);
+levelBtn3.addEventListener('click',checkLevel);
+levelBtn4.addEventListener('click',checkLevel);
 
 function checkLevel(e){
     gameLevel=parseInt(e.target.id.charAt(e.target.id.length-1));
