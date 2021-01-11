@@ -229,3 +229,7 @@ function checkLevel(e){
     }
     resetGame=true;
 }
+
+// Make the reset user botton to reload teh page https://www.w3schools.com/jsref/met_loc_reload.asp
+
+document.getElementById('rstUser').addEventListener('click',() => {location.reload();})
