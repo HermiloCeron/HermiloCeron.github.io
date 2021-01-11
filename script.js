@@ -53,10 +53,18 @@ loginForm.addEventListener('submit',(e)=>{
     setMusic();
 })
 
-// Funstion to set the music
+// Get the songs objects
+let song1=document.getElementById('song1');
+let song2=document.getElementById('song2');
+let song3=document.getElementById('song3');
+let song4=document.getElementById('song4');
+let song5=document.getElementById('song5');
+let song6=document.getElementById('song6');
+
+// Function to set the music
 function setMusic(){
         // Play audio elements https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
-        currSong.play();
+        song1.play();
 }
 // Set Reset game button
 
@@ -311,5 +319,3 @@ function checkMode(e){
     }
     resetGame=true;
 }
-
-let currSong=document.getElementById('song1');
