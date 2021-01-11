@@ -25,6 +25,15 @@ drawBoard();
 // Main function to play
 playHanoi();
 
+const loginForm=document.getElementById("form");
+
+loginForm.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const player=document.getElementById('playerID').value;
+    document.getElementById("login-page").style.display="none";
+    document.getElementById("game-page").style.display="initial";
+})
+
 // Initializate the array in the traditional way
 function iniArray(){
     for(let i=0;i<elements;i++){
