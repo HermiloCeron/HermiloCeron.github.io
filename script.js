@@ -162,6 +162,9 @@ function drawBoard(){
             btn.id='element'+boardArray[i][j]+'ctn'+i;
             btn.style.width=(10+((90-10)/(elements-1))*boardArray[i][j])+"%";
             //console.log('value'+btn.style.width)
+            if(gameModeNumber==4){
+                btn.style.backgroundColor=colorArray[i][j];
+            }
             container.appendChild(btn);
         }
     }
