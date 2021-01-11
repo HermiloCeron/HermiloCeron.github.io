@@ -194,20 +194,38 @@ levelBtn2.addEventListener('click',checkLevel);
 levelBtn3.addEventListener('click',checkLevel);
 levelBtn4.addEventListener('click',checkLevel);
 
+levelBtn1.style.backgroundColor="#CE1836";
+
 function checkLevel(e){
     gameLevel=parseInt(e.target.id.charAt(e.target.id.length-1));
     switch(gameLevel){
         case 2:
             elements=5;
+            levelBtn1.style.backgroundColor="#009989";
+            levelBtn2.style.backgroundColor="#CE1836";
+            levelBtn3.style.backgroundColor="#009989";
+            levelBtn4.style.backgroundColor="#009989";
             break;
         case 3:
             elements=7;
+            levelBtn1.style.backgroundColor="#009989";
+            levelBtn2.style.backgroundColor="#009989";
+            levelBtn3.style.backgroundColor="#CE1836";
+            levelBtn4.style.backgroundColor="#009989";
             break;
         case 4:
             elements=9;
+            levelBtn1.style.backgroundColor="#009989";
+            levelBtn2.style.backgroundColor="#009989";
+            levelBtn3.style.backgroundColor="#009989";
+            levelBtn4.style.backgroundColor="#CE1836";
             break;
         default:
             elements=3;
+            levelBtn1.style.backgroundColor="#CE1836";
+            levelBtn2.style.backgroundColor="#009989";
+            levelBtn3.style.backgroundColor="#009989";
+            levelBtn4.style.backgroundColor="#009989";
     }
     resetGame=true;
 }
