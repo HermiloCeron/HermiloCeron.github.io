@@ -34,3 +34,12 @@ Project One: Tower of Hanoi
 * The maximum points by level will be equal to the minimum movements to win
 * The player would be penalized by doing more movements than the minimum
 * The initial penalization would be -1 point by each extra movement
+
+* Music tracks downloaded from https://freemusicarchive.org/
+    * Artist; Track; Album; Genre
+    * The J. Arthur Keenes Band; Videogame Theme; Xinyue Yam and The Mystery Level Original Soundtrack;Electronic, Soundtrack, Chip Music
+    * Mole;Leaving Videogame Island; We're Always Home; Pop, Experimental Pop
+    * Mole;Welcome to Videogame Island; We're Always Home; Pop, Experimental Pop
+    * Soularflair; Cue 2 - Journey-Motion-Montage-Videogame (Vicissitude); CUES for film, TV, games, etc (BUSY);Techno
+    * Visager; Sunset over the Treetops [Loop]; Songs from an Unmade Forest World (Loops); Electronic, Chiptune, Videogame
+    * Visager; Streamside Hotel [Loop]; Songs from an Unmade Forest World (Loops); Electronic, Chiptune, Videogame
