@@ -16,6 +16,12 @@ let movements=0;
 // Variable to track the number of points
 let points=0;
 
+// Variable to track the best player score
+let score=0;
+
+// player ID
+let player="";
+
 // Initial array previous to the game in normal mode
 iniArray();
 
@@ -25,13 +31,16 @@ drawBoard();
 // Main function to play
 playHanoi();
 
+// Get the player ID
+
 const loginForm=document.getElementById("form");
 
 loginForm.addEventListener('submit',(e)=>{
     e.preventDefault();
-    const player=document.getElementById('playerID').value;
+    player=document.getElementById('playerID').value;
     document.getElementById("login-page").style.display="none";
     document.getElementById("game-page").style.display="initial";
+    document.getElementById('player').innerText='Player: '+player;
 })
 
 // Initializate the array in the traditional way
