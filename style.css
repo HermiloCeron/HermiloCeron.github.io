@@ -1,3 +1,74 @@
+/* Color palette: https://www.colourlovers.com/palette/845564/its_raining_love */
+
+body{
+    font-family: 'Nanum Brush Script', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #009989;
+}
+
+button{
+    background-color: #CE1836;
+    color: #EDB92E ; 
+    border: none;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 22px;
+}
+
+h1{
+    /* border: black solid; */
+    margin: 5px;
+    font-size: 50px;
+}
+
+h3{
+    /* border: black solid; */
+    margin: 5px 0px 15px 0px;
+    font-size: 30px;
+}
+
+h4{
+    margin: 15px 0px 10px 0px;
+    font-size: 25px;
+    color: #CE1836;
+}
+
+header{
+    text-align: center;
+    /* border: #FF847C solid 4px; */
+    border-radius: 20px;
+    background-color: #CE1836;
+    color: #EDB92E ;
+}
+
+hr{
+    border: 1px solid #A3A948;
+}
+
+input{
+    background-color: #EDB92E;
+    color: #F85931;
+    font-family: 'Nanum Brush Script', cursive;
+    text-align: center;
+    font-size: 22px;
+    border: none;
+}
+
+/* Placeholder color https://www.w3schools.com/howto/howto_css_placeholder.asp */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #F85931;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #F85931;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #F85931;
+  }
 
 /* ******* */
 /* Classes */
@@ -26,4 +97,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+#game-page{
+    width: 100%;
+    display: none;
+}
+
+#login-page{
+    background-color: #A3A948;
+    color: #F85931;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 0px 20px 20px 20px;
+    text-align: center;
 }
