@@ -118,5 +118,7 @@ function selectContainer(evt){
         }
         points=(2**elements-1)+(2**elements-1-movements);
         console.log(points);
+    }else{
+        playHanoi();
     }
 }
