@@ -205,6 +205,7 @@ function checkReset(){
 // Main funtion to control the game mode
 function gameMode(){
     points=0;
+    movements=0;
     iniArray();
     drawBoard();
     playHanoi();
@@ -441,6 +442,7 @@ muteBtn.addEventListener('click',(e)=>{
 })
 
 document.getElementById('topPlayers').addEventListener('click',(e)=>{
+    topScores();
     document.getElementById("game-page").style.display="none";
     document.getElementById("score-page").style.display="initial";  
 })
@@ -456,5 +458,32 @@ if(localStorage.length==0){
     for(let i=0;i<10;i++){
         localStorage.setItem("gamer"+i, "Smith");
         localStorage.setItem("score"+i, "1");
+    }
+}
+
+// Function to print the top score table
+
+function topScores(){
+    const gamers=document.querySelector('#top-gamers');
+    const scores=document.querySelector('#top-scores');
+    while(gamers.lastChild){
+        gamers.removeChild(gamers.lastChild);
+    }
+    while(scores.lastChild){
+        scores.removeChild(scores.lastChild);
+    }
+    let gamerElement=document.createElement('div');
+    let scoreElement=document.createElement('div');
+    gamerElement.innerText='Gamer';
+    scoreElement.innerText='Score';
+    gamers.appendChild(gamerElement);
+    scores.appendChild(scoreElement);
+    for(let i=1;i<10;i++){
+        let gamerElement=document.createElement('div');
+        let scoreElement=document.createElement('div');
+        gamerElement.innerText=localStorage.getItem("gamer"+i);
+        scoreElement.innerText=localStorage.getItem("score"+i);
+        gamers.appendChild(gamerElement);
+        scores.appendChild(scoreElement);
     }
 }

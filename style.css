@@ -127,6 +127,13 @@ input{
     text-align: center;
 }
 
+#score-board{
+    background-color: #A3A948;
+    color: #F85931;
+    display: flex;
+    flex-direction: row;
+}
+
 #score-page{
     width: 100%;
     display: none;
@@ -134,4 +141,9 @@ input{
 
 #selection{
     background-color: #CE1836;
+}
+
+#top-gamers,#top-scores{
+    display: flex;
+    flex-direction: column;
 }
