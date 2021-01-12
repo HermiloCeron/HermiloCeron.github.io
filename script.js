@@ -479,7 +479,7 @@ function topScores(){
     scoreElement.innerText='Score';
     gamers.appendChild(gamerElement);
     scores.appendChild(scoreElement);
-    for(let i=1;i<10;i++){
+    for(let i=0;i<10;i++){
         let gamerElement=document.createElement('div');
         let scoreElement=document.createElement('div');
         gamerElement.innerText=localStorage.getItem("gamer"+i);
