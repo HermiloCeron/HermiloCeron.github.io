@@ -276,9 +276,9 @@ function selectContainer(evt){
             //console.log(movements);
             drawBoard();
         }
-        points=(2**elements-1)+(2**elements-1-movements);
         //console.log(points);
         if(gameModeNumber!=4){
+            points=(2**elements-1)+(2**elements-1-movements);
             if(boardArray[2].length<elements){
                 playHanoi();
             }else{
@@ -289,10 +289,16 @@ function selectContainer(evt){
                 }
             }
         }else{
+            points=movements;
             if(checkBicolor()){
                 playHanoi();
             }else{
-                console.log('You win bicolor');
+                if(points>score){
+                    score=points;
+                    document.getElementById('score').innerText='Best score: '+score;
+                    checkRecords();
+                }
+                //console.log('You win bicolor');
             }
         }
     }else{
