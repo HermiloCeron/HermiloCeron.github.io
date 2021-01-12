@@ -274,14 +274,11 @@ function selectContainer(evt){
                 }
             }
         }else{
-            playHanoi();
-            console.log('temp');
-        }
-    }else{
-        if(checkBicolor()){
-            playHanoi();
-        }else{
-            console.log('You win bicolor');
+            if(checkBicolor()){
+                playHanoi();
+            }else{
+                console.log('You win bicolor');
+            }
         }
     }
 }
@@ -289,13 +286,13 @@ function selectContainer(evt){
 // Function to check if bicolor has been solved
 function checkBicolor(){
     let reds=0;
-    for(let i=0;j<colorArray[0].length;i++){
+    for(let i=0;i<colorArray[0].length;i++){
         if(colorArray[0][i]=='red'){
             reds++;
         }
     }
     let blues=0;
-    for(let i=0;j<colorArray[1].length;i++){
+    for(let i=0;i<colorArray[1].length;i++){
         if(colorArray[1][i]=='blue'){
             blues++;
         }
