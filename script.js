@@ -69,8 +69,16 @@ let song6=document.getElementById('song6');
 
 // Function to set the music
 function setMusic(){
-        // Play audio elements https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
-        song1.play();
+    // Set the volume
+    let mainVolume=0.3;
+    song1.volume=mainVolume;
+    song2.volume=mainVolume;
+    song3.volume=mainVolume;
+    song4.volume=mainVolume;
+    song5.volume=mainVolume;
+    song6.volume=mainVolume;
+    // Play audio elements https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play
+    song1.play();
 }
 
 //Looping through the songs using an event listener https://stackoverflow.com/questions/11103582/how-do-you-detect-when-html5-audio-has-finished-playing-more-than-once
