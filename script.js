@@ -223,7 +223,7 @@ function playHanoi(){
             top.addEventListener('click',topFunction,false)
         }
     }
-    setInterval(checkReset,10);
+    setInterval(checkReset,100);
 }
 
 function topFunction(e){
@@ -413,3 +413,29 @@ function checkMode(e){
     }
     resetGame=true;
 }
+
+const muteBtn=document.getElementById('silence');
+let muteUnmute=0;
+
+muteBtn.addEventListener('click',(e)=>{
+    if(muteUnmute%2==0){
+        mainVolume=0.0;
+        song1.volume=mainVolume;
+        song2.volume=mainVolume;
+        song3.volume=mainVolume;
+        song4.volume=mainVolume;
+        song5.volume=mainVolume;
+        song6.volume=mainVolume;
+        muteBtn.style.backgroundColor='#CE1836';
+    }else{
+        mainVolume=0.3;
+        song1.volume=mainVolume;
+        song2.volume=mainVolume;
+        song3.volume=mainVolume;
+        song4.volume=mainVolume;
+        song5.volume=mainVolume;
+        song6.volume=mainVolume;
+        muteBtn.style.backgroundColor='#009989';       
+    }
+    muteUnmute++;
+})
