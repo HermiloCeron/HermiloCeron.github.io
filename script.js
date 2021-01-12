@@ -52,6 +52,9 @@ loginForm.addEventListener('submit',(e)=>{
     player=document.getElementById('playerID').value;
     document.getElementById("login-page").style.display="none";
     document.getElementById("game-page").style.display="initial";
+    if(player==''){
+        player="Anonymous";
+    }
     document.getElementById('player').innerText='Player: '+player;
     setMusic();
 })
