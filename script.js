@@ -285,6 +285,7 @@ function selectContainer(evt){
                 if(points>score){
                     score=points;
                     document.getElementById('score').innerText='Best score: '+score;
+                    checkRecords();
                 }
             }
         }else{
@@ -485,5 +486,15 @@ function topScores(){
         scoreElement.innerText=localStorage.getItem("score"+i);
         gamers.appendChild(gamerElement);
         scores.appendChild(scoreElement);
+    }
+}
+
+function checkRecords(){
+    for(let i=0;i<10;i++){
+        if(score>localStorage.getItem("score"+i)){
+            localStorage.setItem("gamer"+i, player);
+            localStorage.setItem("score"+i, score);
+            return null;
+        }
     }
 }
