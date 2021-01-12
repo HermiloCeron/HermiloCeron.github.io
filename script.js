@@ -449,3 +449,12 @@ document.getElementById('return').addEventListener('click',(e)=>{
     document.getElementById("score-page").style.display="none";
     document.getElementById("game-page").style.display="initial";  
 })
+
+// Default top players using local storage https://www.w3schools.com/html/html5_webstorage.asp
+
+if(localStorage.length==0){
+    for(let i=0;i<10;i++){
+        localStorage.setItem("gamer"+i, "Smith");
+        localStorage.setItem("score"+i, "1");
+    }
+}
