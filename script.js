@@ -146,7 +146,7 @@ function iniArray(){
             }
         }
     }else{
-        for(let i=0;i<elements;i++){
+        for(let i=0;i<(elements+1)/2;i++){
             boardArray[0].push(i);
             boardArray[1].push(i);
             if(i%2>0.5){
@@ -308,19 +308,25 @@ function selectContainer(evt){
 
 // Function to check if bicolor has been solved
 function checkBicolor(){
+    let controlVar;
+    if(((elements+1)/2)%2==0){
+        controlVar=[1,0];
+    }else{
+        controlVar=[0,1];
+    }
     let reds=0;
     for(let i=0;i<colorArray[0].length;i++){
-        if(colorArray[0][i]=='red'){
+        if(colorArray[controlVar[0]][i]=='red'){
             reds++;
         }
     }
     let blues=0;
     for(let i=0;i<colorArray[1].length;i++){
-        if(colorArray[1][i]=='blue'){
+        if(colorArray[controlVar[1]][i]=='blue'){
             blues++;
         }
     }
-    if(blues==elements && reds==elements){
+    if(blues==(elements+1)/2 && reds==(elements+1)/2){
         return false;
     }
     return true;
