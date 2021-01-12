@@ -115,6 +115,7 @@ rstBtn.addEventListener('click',() => {
 function iniArray(){
     for(let i=0;i<3;i++){
         boardArray[i].length=0;
+        colorArray[i].length=0;
     }
     if(gameModeNumber==1 || gameModeNumber==2){
         for(let i=0;i<elements;i++){
@@ -192,6 +193,7 @@ function checkReset(){
 
 // Main funtion to control the game mode
 function gameMode(){
+    points=0;
     iniArray();
     drawBoard();
     playHanoi();
