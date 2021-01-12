@@ -293,6 +293,8 @@ function selectContainer(evt){
                 console.log('You win bicolor');
             }
         }
+    }else{
+        playHanoi();
     }
 }
 
