@@ -439,3 +439,13 @@ muteBtn.addEventListener('click',(e)=>{
     }
     muteUnmute++;
 })
+
+document.getElementById('topPlayers').addEventListener('click',(e)=>{
+    document.getElementById("game-page").style.display="none";
+    document.getElementById("score-page").style.display="initial";  
+})
+
+document.getElementById('return').addEventListener('click',(e)=>{
+    document.getElementById("score-page").style.display="none";
+    document.getElementById("game-page").style.display="initial";  
+})

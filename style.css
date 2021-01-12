@@ -127,6 +127,11 @@ input{
     text-align: center;
 }
 
+#score-page{
+    width: 100%;
+    display: none;
+}
+
 #selection{
     background-color: #CE1836;
 }
