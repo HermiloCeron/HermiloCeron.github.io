@@ -43,6 +43,12 @@ drawBoard();
 // Main function to play
 playHanoi();
 
+// Win message
+
+const winMsg=document.createElement('div');
+winMsg.className='win';
+winMsg.textContent="YOU WIN !!!";
+
 // Get the player ID
 
 const loginForm=document.getElementById("form");
@@ -284,6 +290,10 @@ function selectContainer(evt){
             if(boardArray[2].length<elements){
                 playHanoi();
             }else{
+                // Clone an element https://www.w3schools.com/jsref/met_node_clonenode.asp
+                document.getElementById('ctn0').appendChild(winMsg.cloneNode(true));
+                document.getElementById('ctn1').appendChild(winMsg.cloneNode(true));
+                document.getElementById('ctn2').prepend(winMsg.cloneNode(true));
                 if(points>score){
                     score=points;
                     document.getElementById('score').innerText='Best score: '+score;
@@ -297,6 +307,9 @@ function selectContainer(evt){
             if(checkBicolor()){
                 playHanoi();
             }else{
+                document.getElementById('ctn0').prepend(winMsg.cloneNode(true));
+                document.getElementById('ctn1').prepend(winMsg.cloneNode(true));
+                document.getElementById('ctn2').appendChild(winMsg.cloneNode(true));
                 if(points>score){
                     score=points;
                     document.getElementById('score').innerText='Best score: '+score;

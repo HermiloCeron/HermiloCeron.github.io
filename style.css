@@ -103,6 +103,12 @@ input{
     border-radius: 4px;
 }
 
+.win{
+    background-color: #CE1836;
+    color: #EDB92E ;
+    font-size: 50px;
+}
+
 /* *** */
 /* IDs */
 /* *** */
