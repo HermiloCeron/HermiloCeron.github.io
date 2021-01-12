@@ -496,11 +496,16 @@ function topScores(){
 }
 
 function checkRecords(){
-    for(let i=0;i<10;i++){
-        if(score>localStorage.getItem("score"+i)){
-            localStorage.setItem("gamer"+i, player);
-            localStorage.setItem("score"+i, score);
-            return null;
+    let position=0;
+    while(score<localStorage.getItem("score"+position) && position<=10){
+        position++;
+    }
+    if(position<10){
+        for(let i=9;i>position;i--){
+            localStorage.setItem("gamer"+i, localStorage.getItem("gamer"+(i-1)));
+            localStorage.setItem("score"+i, localStorage.getItem("score"+(i-1)));           
         }
+        localStorage.setItem("gamer"+position, player);
+        localStorage.setItem("score"+position, score);
     }
 }
