@@ -279,6 +279,8 @@ function selectContainer(evt){
         //console.log(points);
         if(gameModeNumber!=4){
             points=(2**elements-1)+(2**elements-1-movements);
+            document.querySelector('#num-mov').innerText='Movements: '+movements;
+            document.querySelector('#curr-score').innerText='Current score: '+points;
             if(boardArray[2].length<elements){
                 playHanoi();
             }else{
@@ -290,6 +292,8 @@ function selectContainer(evt){
             }
         }else{
             points=movements;
+            document.querySelector('#num-mov').innerText='Movements: '+movements;
+            document.querySelector('#curr-score').innerText='Current score: '+points;
             if(checkBicolor()){
                 playHanoi();
             }else{
