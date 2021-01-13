@@ -67,15 +67,15 @@
         - Traditional. Normal game.
         - Upside-down. Traditional game but the board and teh discs are upside down.
 
-![Upside down game](./imgs/upside-down.png)
+        ![Upside down game](./imgs/upside-down.png)
 
         - Random. Traditional mode but the game is already started.
 
-![Random game](./imgs/random.png)
+        ![Random game](./imgs/random.png)
 
         - Bicolor. Variant of the game with the same basic rules. However the game ends when the dics of different color are separated.
 
-![Bicolor game](./imgs/bicolor.png)
+        ![Bicolor game](./imgs/bicolor.png)
 
     + Difficulty level:
         - Easy: 3 discs for most of the game modes. 2 discs for bicolor mode.
