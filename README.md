@@ -36,3 +36,61 @@
 ![Middle game array](./imgs/array.png)
 
 * A function checks if all the discs are in the rigth side, if not call the main fuction again and the game continues.
+
+## Page design, styling and additional features
+
+* Main color pallete ("It's raining love") was taken from [Colour lovers website](https://www.colourlovers.com/palette/845564/its_raining_love).
+
+* Music was added to the game section which was obtained from [The free music archive](https://freemusicarchive.org/).
+
+### Landing page
+
+* User Id is required but not compulsory (By default "Anonymous").
+
+![Landing page](./imgs/homepage.png)
+
+### Game page
+
+* Appears after clicking on the play button of the landing page. Music starts to play and loops continously.
+* Top information:
+    + Player ID
+    + Best score (Of the current ID player)
+    + Movements of the current game
+    + Current score of the game
+
+* Midle section corresponds to the game board
+
+![Game page](./imgs/gamepage.png)
+
+* Bottom selectors:
+    + Game mode:
+        - Traditional. Normal game.
+        - Upside-down. Traditional game but the board and teh discs are upside down.
+
+![Upside down game](./imgs/upside-down.png)
+
+        - Random. Traditional mode but the game is already started.
+
+![Random game](./imgs/random.png)
+
+        - Bicolor. Variant of the game with the same basic rules. However the game ends when the dics of different color are separated.
+
+![Bicolor game](./imgs/bicolor.png)
+
+    + Difficulty level:
+        - Easy: 3 discs for most of the game modes. 2 discs for bicolor mode.
+        - Medium: 5 discs for most of the game modes. 3 discs for bicolor mode.
+        - Hard: 7 discs for most of the game modes. 4 discs for bicolor mode.
+        - Harder: 9 discs for most of the game modes. 5 discs for bicolor mode.
+    + Other options:
+        - Reset game: restarts the current game.
+        - Reset user: reload the page and take you to the landing page.
+        - Mute music: set the music volume to 0.
+        - Top scores: take you to the scores page.
+
+### Scores page
+
+* Show the best scores in the game.
+* Scores are saved using [the webpage local sorage](https://www.w3schools.com/html/html5_webstorage.asp).
+
+![Scores page](./imgs/score.png)
