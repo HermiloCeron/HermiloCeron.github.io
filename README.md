@@ -3,7 +3,7 @@
 ## Basic game
 
 * The original basic game consists of three rods where you can stack discs of different sizes. The clasical game begins with all the discs stacked at the left rod ordered by size.
-![Game start]("./imgs/begin.png")
+![Game start](./imgs/begin.png)
 * Player selects a top disc stacked in a rod.
 * Player moves the disc where it wants. But the disc is only moved if these rules are satisfied:
     + You can only move the disc at the top.
